@@ -16,7 +16,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { useParams } from 'react-router-dom';
 
-const server_url = 'http://localhost:5000';
+const server_url = process.env.REACT_APP_BACKEND_URL;
 
 var connections = {};
 
@@ -88,6 +88,7 @@ const { meetingCode } = useParams();
             }
         }
     }
+ console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
 
     const getPermissions = async () => {
         try {
@@ -292,7 +293,9 @@ useEffect(() => {
 
 
     let connectToSocketServer = () => {
-        socketRef.current = io.connect(server_url, { secure: false })
+        socketRef.current = io(server_url, {
+  transports: ["websocket"],
+});
 
         socketRef.current.on('signal', gotMessageFromServer)
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api/v1'; 
+const BASE_URL = process.env.REACT_APP_BACKEND_URL + '/api/v1'; 
 
 export const register = (name, username, password) =>
   axios.post(`${BASE_URL}/users/register`, { name, username, password });
