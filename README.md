@@ -4,16 +4,15 @@ A full-stack video meeting application that enables users to create and join rea
 
 ---
 
-## 🚀 Features
+## Features
 - Create and join video meetings
 - Real-time video and audio communication using WebRTC
 - Live group chat during meetings
 - Secure routing and protected pages
 
-
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend
 - React
@@ -29,17 +28,17 @@ A full-stack video meeting application that enables users to create and join rea
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
+```
 video-meet/
-├── frontend/ # React client
-└── backend/ # Node.js + Express server
-
-
+├── frontend/   # React client
+└── backend/    # Node.js + Express server
+```
 
 ---
 
-## ⚙️ Environment Variables
+##  Environment Variables
 
 Create a `.env` file inside the `backend` folder using the example below:
 
@@ -47,20 +46,30 @@ Create a `.env` file inside the `backend` folder using the example below:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 CLIENT_URL=http://localhost:3000
+```
 
-Backend Setup
+---
 
+##  Running the Project Locally
+
+### Backend Setup
+```bash
 cd backend
 npm install
 npm run dev
+```
 
-
-Frontend Setup
-
+### Frontend Setup
+```bash
 cd frontend
 npm install
 npm start
+```
 
-Frontend runs on: http://localhost:3000
+- Frontend runs on: http://localhost:3000
+- Backend runs on: http://localhost:5000
 
-Backend runs on: http://localhost:5000
+---
+
+## Author
+Sadhna Gupta
