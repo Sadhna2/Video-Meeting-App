@@ -13,15 +13,15 @@ const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); // ✅ for handling refresh and first load
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
     
     if (storedToken) setToken(storedToken);
-    if (storedUser) setUser(storedUser);
-    setLoading(false); // ✅ done loading, whether token exists or not
+     if (storedUser) setUser(JSON.parse(storedUser));
+    setLoading(false); 
   }, []);
 
   // Register
@@ -77,7 +77,7 @@ localStorage.setItem('user', JSON.stringify({ name: response.data.name, username
         register,
         fetchHistory,
         addMeeting,
-        loading // ✅ Exposed here for use in App.js or anywhere
+        loading
       }}
     >
       {children}
